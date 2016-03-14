@@ -544,6 +544,7 @@ def booktitle(record):
             record["booktitle"] = record["title"]
     return record
 
+    if record["ENTRYTYPE"] == "incollection" or record["ENTRYTYPE"] == "inbook":
 
 def remove_abstract(record):
     """
@@ -773,14 +774,3 @@ def multivolume(record):
     return record
 
 
-def remove_booktitle(record):
-    """
-    Remove 'booktitle' fields.
-
-    :param record: the record.
-    :type record: dict
-    :returns: dict -- the modified record.
-    """
-    if "booktitle" in record:
-        del record["booktitle"]
-    return record
